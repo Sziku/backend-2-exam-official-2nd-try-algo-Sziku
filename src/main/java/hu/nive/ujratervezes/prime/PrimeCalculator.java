@@ -18,7 +18,15 @@ public class PrimeCalculator {
 
 
     public boolean isPrime(int num){
-        return false;
+        int isPrime = 0;
+
+        for(int i = 1; i <= num; i++){
+            if(num%i == 0){
+                isPrime++;
+            }
+        }
+
+        return isPrime == 2;
     }
 
     public int[] multiplyPrimesWithMinimum(int[] inputArr){
