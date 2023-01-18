@@ -18,18 +18,27 @@ public class PrimeCalculator {
 
 
     public boolean isPrime(int num){
-        int isPrime = 0;
+        int division = 0;
 
         for(int i = 1; i <= num; i++){
             if(num%i == 0){
-                isPrime++;
+                division++;
             }
         }
 
-        return isPrime == 2;
+        return division == 2;
     }
 
     public int[] multiplyPrimesWithMinimum(int[] inputArr){
-        return null;
+        if(inputArr == null) throw new IllegalArgumentException();
+        if(inputArr.length == 0) return new int[0];
+
+        for(int i = 0; i< inputArr.length; i++){
+            if(isPrime(inputArr[i])){
+                inputArr[i] = min(inputArr) * inputArr[i];
+            }
+        }
+
+        return inputArr;
     }
 }
