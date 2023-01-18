@@ -1,5 +1,7 @@
 package hu.nive.ujratervezes.prime;
 
+import java.util.Arrays;
+
 public class PrimeCalculator {
     public int min(int[] inputArr){
 
@@ -33,12 +35,12 @@ public class PrimeCalculator {
         if(inputArr == null) throw new IllegalArgumentException();
         if(inputArr.length == 0) return new int[0];
 
+        int min = min(inputArr);
         for(int i = 0; i< inputArr.length; i++){
             if(isPrime(inputArr[i])){
-                inputArr[i] = min(inputArr) * inputArr[i];
+                inputArr[i] = min * inputArr[i];
             }
         }
-
         return inputArr;
     }
 }
